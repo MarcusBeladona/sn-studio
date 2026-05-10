@@ -1,18 +1,20 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
+import { visionTool } from '@sanity/vision'
+import { schemaTypes } from './schemaTypes'
+import './static/style.css';
 
 export default defineConfig({
-  name: 'default',
-  title: 'sn-studio',
+	name: 'default',
+	title: 'sn-studio',
 
-  projectId: 'zt4joqnt',
-  dataset: 'production',
+	projectId: 'zt4joqnt',
+	dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+	plugins: [structureTool(), visionTool()],
 
-  schema: {
-    types: schemaTypes,
-  },
+	schema: {
+		types: schemaTypes,
+	},
+	releases: { enabled: false },
 })
