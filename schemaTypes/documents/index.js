@@ -1,1 +1,0 @@
-export {caseType} from './caseType'

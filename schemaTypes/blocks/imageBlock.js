@@ -1,3 +1,4 @@
+/** Bloco de imagem + caption. Usado no body de cases e dentro de richTextBlock/container. */
 import { defineField, defineType } from 'sanity'
 import { ImagesIcon } from '@sanity/icons'
 
@@ -9,12 +10,12 @@ export const imageBlock = defineType({
 	fieldsets: [
 		{
 			name: 'flags',
-			title: 'Options',
+			title: 'Flags',
 			options: { columns: 2 },
 		},
 	],
 	fields: [
-		defineField({
+		/* defineField({
 			name: 'isSpanFull',
 			type: 'boolean',
 			title: 'Span Full',
@@ -34,7 +35,7 @@ export const imageBlock = defineType({
 			title: 'Has Border',
 			initialValue: false,
 			fieldset: 'flags',
-		}),
+		}), */
 		defineField({
 			name: 'image',
 			type: 'image',

@@ -1,3 +1,9 @@
+/**
+ * Portable Text customizado usado no body de articles.
+ *
+ * Decorator "highlight" com cor customizada.
+ * Aceita blocos embutidos: card, container, imageBlock.
+ */
 import { DEFAULT_ANNOTATIONS, DEFAULT_DECORATORS, defineType } from 'sanity'
 import React from 'react'
 import { HighlightIcon } from '@sanity/icons'

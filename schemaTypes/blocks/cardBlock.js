@@ -1,8 +1,6 @@
-import { createElement } from 'react'
+/** Card com ícone Phosphor, título e descrição. Usado em richTextBlock e container. */
 import { defineField, defineType } from 'sanity'
 import { SparkleIcon } from '@sanity/icons'
-
-const iconesPhosphorLink = 'https://icones.js.org/collection/ph'
 
 export const cardBlock = defineType({
 	name: 'card',
@@ -13,15 +11,8 @@ export const cardBlock = defineType({
 			name: 'icon_name',
 			type: 'string',
 			title: 'Icon',
-			description: createElement(
-				'a',
-				{
-					href: iconesPhosphorLink,
-					target: '_blank',
-					rel: 'noopener noreferrer',
-				},
-				'Phosphor Icons',
-			),
+			description:
+				'Phosphor icon name. Browse icons at https://icones.js.org/collection/ph',
 		}),
 		defineField({
 			name: 'title',

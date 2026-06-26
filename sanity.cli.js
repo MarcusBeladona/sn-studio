@@ -1,3 +1,4 @@
+/** Config da CLI Sanity (build, deploy). Mesmo projectId/dataset do sanity.config.js. */
 import { defineCliConfig } from 'sanity/cli'
 
 export default defineCliConfig({

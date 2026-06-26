@@ -1,3 +1,4 @@
+/** Container de layout (até 3 items: card ou imageBlock) com flags de span/container. */
 import { defineField, defineType } from 'sanity'
 import { ComposeIcon } from '@sanity/icons'
 
