@@ -5,7 +5,6 @@ import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-li
 
 export const articleType = defineType({
 	name: 'article',
-	title: 'Articles',
 	type: 'document',
 	icon: DocumentTextIcon,
 	orderings: [orderRankOrdering],
