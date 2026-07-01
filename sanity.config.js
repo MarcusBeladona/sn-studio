@@ -16,11 +16,11 @@ import { documentInternationalization } from '@sanity/document-internationalizat
 import { schemaTypes } from './schemaTypes'
 import { structure } from './structure'
 import { supportedLanguages, translatedSchemaTypes } from './supportedLanguages'
-import './static/style.css';
 
 export default defineConfig({
-	name: 'default',
+
 	title: 'sn-studio',
+	name: 'default',
 
 	projectId: 'zt4joqnt',
 	dataset: 'production',
@@ -39,5 +39,6 @@ export default defineConfig({
 		templates: (prev) =>
 			prev.filter((template) => !translatedSchemaTypes.includes(template.id)),
 	},
+
 	releases: { enabled: false },
 })
