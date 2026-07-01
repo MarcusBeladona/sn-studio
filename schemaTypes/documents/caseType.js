@@ -52,12 +52,28 @@ export const caseType = defineType({
 		defineField({
 			name: 'body',
 			type: 'array',
-			of: [{ type: 'image' }, {
-				name: 'video',
-				type: 'file',
-				options: { accept: 'video/*' },
-			}],
 			group: 'content',
+			of: [
+				{ type: 'image' },
+				{ name: 'video', type: 'file', options: { accept: 'video/*' }, },
+				{
+					type: 'object',
+					name: 'iframe',
+					fields: [
+						{
+							name: 'url',
+							type: 'url'
+						}
+					],
+					preview: {
+						prepare() {
+							return {
+								title: 'Iframe',
+							}
+						}
+					}
+				},
+			],
 		}),
 		defineField({
 			name: 'related',
