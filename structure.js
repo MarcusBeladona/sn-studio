@@ -7,44 +7,47 @@
  */
 import { DocumentTextIcon, DocumentsIcon, EarthGlobeIcon } from '@sanity/icons'
 import { supportedLanguages } from './supportedLanguages'
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list'
 
-const contentTypes = [
-	{ schemaType: 'case', title: 'Cases', icon: DocumentsIcon },
-	{ schemaType: 'article', title: 'Articles', icon: DocumentTextIcon },
-]
-
-function localizedDocumentList(S, { schemaType, title, language }) {
-	return S.documentTypeList(schemaType)
-		.title(title)
-		.filter(`_type == "${schemaType}" && language == "${language.id}"`)
-		.defaultOrdering([{ field: 'release', direction: 'desc' }])
-		.initialValueTemplates([S.initialValueTemplateItem(`${schemaType}-${language.id}`)])
-}
-
-function languageSection(S, language) {
+function languageSection(S, context, language) {
 	return S.listItem()
 		.title(language.title)
 		.icon(EarthGlobeIcon)
 		.child(
 			S.list()
 				.title(language.title)
-				.items(
-					contentTypes.map(({ schemaType, title, icon }) =>
-						S.listItem()
-							.title(title)
-							.icon(icon)
-							.child(localizedDocumentList(S, { schemaType, title, language })),
-					),
-				),
+				.items([
+					orderableDocumentListDeskItem({
+						type: 'case',
+						title: 'Cases',
+						filter: 'language == $language',
+						params: {
+							language: language.id,
+						},
+						S,
+						context,
+					}),
+
+					orderableDocumentListDeskItem({
+						type: 'article',
+						title: 'Articles',
+						filter: 'language == $language',
+						params: {
+							language: language.id,
+						},
+						S,
+						context,
+					}),
+				]),
 		)
 }
 
-export const structure = (S) =>
+export const structure = (S, context) =>
 	S.list()
 		.title('Content')
 		.items(
 			supportedLanguages.flatMap((language, index) => [
 				...(index > 0 ? [S.divider()] : []),
-				languageSection(S, language),
+				languageSection(S, context, language),
 			]),
 		)
