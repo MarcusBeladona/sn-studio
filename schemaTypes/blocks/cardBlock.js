@@ -1,14 +1,16 @@
-/** Card com ícone Phosphor, título e descrição. Usado em richTextBlock e container. */
 import { defineField, defineType } from 'sanity'
-import { SparkleIcon } from '@sanity/icons'
+import { ComposeIcon } from '@sanity/icons'
 
 export const cardBlock = defineType({
-	name: 'card',
+
+	name: 'cardBlock',
+	title: 'Card',
 	type: 'object',
-	icon: SparkleIcon,
+	icon: ComposeIcon,
+
 	fields: [
 		defineField({
-			name: 'icon_name',
+			name: 'iconName',
 			type: 'string',
 			title: 'Icon',
 			description:

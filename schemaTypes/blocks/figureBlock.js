@@ -1,20 +1,20 @@
 import { defineField, defineType } from 'sanity'
-import { VideoIcon } from '@sanity/icons'
+import { ImagesIcon } from '@sanity/icons'
 
-export const videoBlock = defineType({
+export const figureBlock = defineType({
 
-	name: 'videoBlock',
-	title: 'Video',
+	name: 'figureBlock',
+	title: 'Figure',
 	type: 'object',
-	icon: VideoIcon,
+	icon: ImagesIcon,
 
 	fieldsets: [{ name: 'flags', options: { columns: 2 } }],
 
 	fields: [
 		defineField({
-			name: 'video',
-			type: 'file',
-			options: { accept: 'video/*' },
+			name: 'image',
+			type: 'image',
+			options: { hotspot: true },
 			validation: (rule) => rule.required(),
 		}),
 		defineField({
@@ -40,11 +40,12 @@ export const videoBlock = defineType({
 	preview: {
 		select: {
 			caption: 'caption',
+			media: 'image',
 		},
-		prepare({ caption }) {
+		prepare({ caption, media }) {
 			return {
-				title: caption || 'Video',
-				media: VideoIcon,
+				title: caption || 'Figure',
+				media,
 			}
 		},
 	},

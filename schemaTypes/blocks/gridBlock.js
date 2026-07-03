@@ -1,25 +1,21 @@
 import { defineField, defineType } from 'sanity'
-import { VideoIcon } from '@sanity/icons'
+import { InlineElementIcon } from '@sanity/icons'
 
-export const videoBlock = defineType({
+export const gridBlock = defineType({
 
-	name: 'videoBlock',
-	title: 'Video',
+	name: 'gridBlock',
+	title: 'Grid',
 	type: 'object',
-	icon: VideoIcon,
+	icon: InlineElementIcon,
 
 	fieldsets: [{ name: 'flags', options: { columns: 2 } }],
 
 	fields: [
 		defineField({
-			name: 'video',
-			type: 'file',
-			options: { accept: 'video/*' },
-			validation: (rule) => rule.required(),
-		}),
-		defineField({
-			name: 'caption',
-			type: 'string',
+			name: 'items',
+			type: 'array',
+			validation: (rule) => rule.max(3),
+			of: [{ type: 'figureBlock' }, { type: 'videoBlock' }],
 		}),
 
 		// Flags
@@ -39,12 +35,13 @@ export const videoBlock = defineType({
 
 	preview: {
 		select: {
-			caption: 'caption',
+			items: 'items',
 		},
-		prepare({ caption }) {
+		prepare({ items }) {
+			const n = Array.isArray(items) ? items.length : 0
 			return {
-				title: caption || 'Video',
-				media: VideoIcon,
+				title: 'Container',
+				subtitle: n ? `${n}/3` : '0/3',
 			}
 		},
 	},

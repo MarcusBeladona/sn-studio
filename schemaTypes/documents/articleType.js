@@ -4,23 +4,25 @@ import { DocumentTextIcon } from '@sanity/icons'
 import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list'
 
 export const articleType = defineType({
+
 	name: 'article',
 	type: 'document',
 	icon: DocumentTextIcon,
+
 	orderings: [orderRankOrdering],
+
 	groups: [
 		{ name: 'content', default: true },
 		{ name: 'options' },
 		{ ...ALL_FIELDS_GROUP, hidden: true },
 	],
-	fieldsets: [
-		{
-			name: 'flags',
-			title: 'Flags',
-			options: { columns: 2 },
-		},
-	],
+
+	fieldsets: [{ name: 'flags', options: { columns: 2 } }],
+
 	fields: [
+
+		// CONTENT
+
 		orderRankField({ type: 'case' }),
 		defineField({
 			name: 'title',
@@ -32,7 +34,7 @@ export const articleType = defineType({
 			name: 'description',
 			type: 'text',
 			rows: 2,
-			validation: (rule) => rule.required().max(110),
+			validation: (rule) => rule.required(),
 			group: 'content',
 		}),
 		defineField({
@@ -54,20 +56,9 @@ export const articleType = defineType({
 			type: 'richTextBlock',
 			group: 'content',
 		}),
-		defineField({
-			name: 'bookmark',
-			type: 'boolean',
-			initialValue: false,
-			group: 'options',
-			fieldset: 'flags',
-		}),
-		defineField({
-			name: 'visible',
-			type: 'boolean',
-			initialValue: true,
-			group: 'options',
-			fieldset: 'flags',
-		}),
+
+		// OPTIONS
+
 		defineField({
 			name: 'slug',
 			type: 'slug',
@@ -88,6 +79,24 @@ export const articleType = defineType({
 			options: { hotspot: true },
 			group: 'options',
 		}),
+
+		// FLAGS
+
+		defineField({
+			name: 'bookmark',
+			type: 'boolean',
+			initialValue: false,
+			group: 'options',
+			fieldset: 'flags',
+		}),
+		defineField({
+			name: 'visible',
+			type: 'boolean',
+			initialValue: true,
+			group: 'options',
+			fieldset: 'flags',
+		}),
+
 	],
 	preview: {
 		select: {

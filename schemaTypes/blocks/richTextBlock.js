@@ -1,9 +1,3 @@
-/**
- * Portable Text customizado usado no body de articles.
- *
- * Decorator "highlight" com cor customizada.
- * Aceita blocos embutidos: card, container, imageBlock.
- */
 import { DEFAULT_ANNOTATIONS, DEFAULT_DECORATORS, defineType } from 'sanity'
 import React from 'react'
 import { HighlightIcon } from '@sanity/icons'
@@ -22,6 +16,7 @@ const HighlightDecorator = (props) => {
 }
 
 export const richTextBlock = defineType({
+
 	name: 'richTextBlock',
 	type: 'array',
 	of: [
@@ -31,8 +26,8 @@ export const richTextBlock = defineType({
 				decorators: [
 					...DEFAULT_DECORATORS,
 					{
-						title: 'Highlight',
 						value: 'highlight',
+						title: 'Highlight',
 						icon: HighlightIcon,
 						component: HighlightDecorator
 					},
@@ -42,6 +37,6 @@ export const richTextBlock = defineType({
 				]
 			}
 		},
-		{ type: 'card' }, { type: 'container' }, { type: 'imageBlock' },
+		{ type: 'figureBlock' }, { type: 'videoBlock' }, { type: 'gridBlock' }, { type: 'cardBlock' }
 	]
 })

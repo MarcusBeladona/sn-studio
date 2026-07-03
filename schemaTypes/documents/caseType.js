@@ -7,6 +7,7 @@ export const caseType = defineType({
 	type: 'document',
 	name: 'case',
 	icon: DocumentsIcon,
+
 	orderings: [orderRankOrdering],
 
 	groups: [
@@ -14,9 +15,8 @@ export const caseType = defineType({
 		{ name: 'options' },
 		{ ...ALL_FIELDS_GROUP, hidden: true },
 	],
-	fieldsets: [
-		{ name: 'flags', options: { columns: 2 }, },
-	],
+
+	fieldsets: [{ name: 'flags', options: { columns: 2 } }],
 
 	fields: [
 
@@ -33,7 +33,7 @@ export const caseType = defineType({
 			name: 'description',
 			type: 'text',
 			rows: 2,
-			validation: (rule) => rule.required().max(110),
+			validation: (rule) => rule.required(),
 			group: 'content',
 		}),
 		defineField({
