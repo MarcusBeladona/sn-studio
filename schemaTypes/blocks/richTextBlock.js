@@ -1,6 +1,7 @@
-import { DEFAULT_ANNOTATIONS, DEFAULT_DECORATORS, defineType } from 'sanity'
 import React from 'react'
+import { DEFAULT_ANNOTATIONS, DEFAULT_DECORATORS, defineType, defineField } from 'sanity'
 import { HighlightIcon } from '@sanity/icons'
+import { VideoIcon } from '@sanity/icons'
 
 const HighlightDecorator = (props) => {
 	return React.createElement(
@@ -37,6 +38,6 @@ export const richTextBlock = defineType({
 				]
 			}
 		},
-		{ type: 'figureBlock' }, { type: 'videoBlock' }, { type: 'gridBlock' }, { type: 'cardBlock' }
+		{ type: 'figureBlock' }, { type: 'videoBlock' }, { type: 'gridBlock' },
 	]
 })
