@@ -1,28 +1,35 @@
 import { defineField, defineType } from 'sanity'
-import { ImageIcon } from '@sanity/icons'
+import { DesktopIcon } from '@sanity/icons'
 
-export const figureBlock = defineType({
+export const containerBlock = defineType({
 
-	name: 'figureBlock',
-	title: 'Figure',
+	name: 'containerBlock',
+	title: 'Container',
 	type: 'object',
-	icon: ImageIcon,
+	icon: DesktopIcon,
 
 	fieldsets: [{ name: 'flags', options: { columns: 2 } }],
 
 	fields: [
 		defineField({
 			name: 'image',
-			type: 'image',
-			options: { hotspot: true },
+			type: 'figureBlock',
 			validation: (rule) => rule.required(),
 		}),
-		defineField({
-			name: 'caption',
-			type: 'string',
-		}),
 
-		// Flags
+		// FLAGS
+
+		defineField({
+			name: 'style',
+			type: 'string',
+			options: {
+				list: [
+					{ title: 'Window', value: 'window' },
+					{ title: 'Container', value: 'container' }
+				],
+				layout: 'radio'
+			}
+		}),
 		defineField({
 			name: 'fullWidth',
 			type: 'boolean',
@@ -39,12 +46,11 @@ export const figureBlock = defineType({
 
 	preview: {
 		select: {
-			caption: 'caption',
-			media: 'image',
+			media: 'image.image',
 		},
-		prepare({ caption, media }) {
+		prepare({ media }) {
 			return {
-				title: caption || 'Figure',
+				title: 'Container',
 				media,
 			}
 		},

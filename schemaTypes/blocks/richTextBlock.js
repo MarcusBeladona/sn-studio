@@ -38,6 +38,7 @@ export const richTextBlock = defineType({
 				]
 			}
 		},
-		{ type: 'figureBlock' }, { type: 'videoBlock' }, { type: 'iframeBlock' }, { type: 'gridBlock' },
+		{ type: 'figureBlock' }, { type: 'videoBlock' }, { type: 'carouselBlock' }, { type: 'iframeBlock' },
+		{ type: 'gridBlock' }, { type: 'containerBlock' },
 	]
 })

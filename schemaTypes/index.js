@@ -1,4 +1,6 @@
 import { cardBlock } from './blocks/cardBlock'
+import { carouselBlock } from './blocks/carouselBlock'
+import { containerBlock } from './blocks/containerBlock'
 import { figureBlock } from './blocks/figureBlock'
 import { gridBlock } from './blocks/gridBlock'
 import { iframeBlock } from './blocks/iframeBlock'
@@ -16,4 +18,6 @@ export const schemaTypes = [
 	iframeBlock,
 	caseType,
 	articleType,
+	carouselBlock,
+	containerBlock,
 ]

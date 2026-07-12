@@ -1,26 +1,26 @@
 import { defineField, defineType } from 'sanity'
-import { ImageIcon } from '@sanity/icons'
+import { ImagesIcon } from '@sanity/icons'
 
-export const figureBlock = defineType({
+export const carouselBlock = defineType({
 
-	name: 'figureBlock',
-	title: 'Figure',
+	name: 'carouselBlock',
+	title: 'Carousel',
 	type: 'object',
-	icon: ImageIcon,
+	icon: ImagesIcon,
 
 	fieldsets: [{ name: 'flags', options: { columns: 2 } }],
 
 	fields: [
 		defineField({
-			name: 'image',
-			type: 'image',
-			options: { hotspot: true },
+			name: 'images',
+			type: 'array',
+			of: [{ type: 'figureBlock' }],
 			validation: (rule) => rule.required(),
 		}),
-		defineField({
+		/* defineField({
 			name: 'caption',
 			type: 'string',
-		}),
+		}), */
 
 		// Flags
 		defineField({
@@ -39,12 +39,11 @@ export const figureBlock = defineType({
 
 	preview: {
 		select: {
-			caption: 'caption',
-			media: 'image',
+			media: 'images.0.image',
 		},
-		prepare({ caption, media }) {
+		prepare({ media }) {
 			return {
-				title: caption || 'Figure',
+				title: 'Carousel',
 				media,
 			}
 		},
