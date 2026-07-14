@@ -2,6 +2,7 @@ import React from 'react'
 import { DEFAULT_ANNOTATIONS, DEFAULT_DECORATORS, defineType, defineField } from 'sanity'
 import { HighlightIcon } from '@sanity/icons'
 import { VideoIcon } from '@sanity/icons'
+import { diffBlock } from './diffBlock'
 
 const HighlightDecorator = (props) => {
 	return React.createElement(
@@ -39,6 +40,6 @@ export const richTextBlock = defineType({
 			}
 		},
 		{ type: 'figureBlock' }, { type: 'videoBlock' }, { type: 'carouselBlock' }, { type: 'iframeBlock' },
-		{ type: 'gridBlock' }, { type: 'containerBlock' },
+		{ type: 'gridBlock' }, { type: 'diffBlock' }, { type: 'containerBlock' },
 	]
 })
