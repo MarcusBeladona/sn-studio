@@ -1,6 +1,6 @@
 import { ALL_FIELDS_GROUP, defineField, defineType } from 'sanity'
 import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list'
-import { DocumentsIcon } from '@sanity/icons'
+import { DocumentsIcon } from '@sanity/icons/Documents'
 
 export const caseType = defineType({
 

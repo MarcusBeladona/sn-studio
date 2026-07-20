@@ -1,5 +1,5 @@
 import { ALL_FIELDS_GROUP, defineField, defineType } from 'sanity'
-import { DocumentTextIcon } from '@sanity/icons'
+import { DocumentTextIcon } from '@sanity/icons/DocumentText'
 
 import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list'
 

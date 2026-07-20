@@ -1,11 +1,5 @@
-/**
- * Estrutura do menu lateral do Studio.
- *
- * Organiza o conteúdo por idioma (PT / EN), e dentro de cada um
- * lista Cases e Articles filtrados pelo campo `language`.
- * Novos tipos de documento traduzíveis entram em `contentTypes`.
- */
-import { DocumentTextIcon, DocumentsIcon, EarthGlobeIcon } from '@sanity/icons'
+
+import { EarthGlobeIcon } from '@sanity/icons/EarthGlobe'
 import { supportedLanguages } from './supportedLanguages'
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list'
 

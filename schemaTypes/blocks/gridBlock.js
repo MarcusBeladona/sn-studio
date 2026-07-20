@@ -1,8 +1,5 @@
 import { defineField, defineType } from 'sanity'
-import { InlineElementIcon } from '@sanity/icons'
-
-import { VideoIcon } from '@sanity/icons'
-import { ImagesIcon } from '@sanity/icons'
+import { InlineElementIcon } from '@sanity/icons/InlineElement'
 
 export const gridBlock = defineType({
 

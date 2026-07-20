@@ -1,8 +1,6 @@
 import React from 'react'
 import { DEFAULT_ANNOTATIONS, DEFAULT_DECORATORS, defineType, defineField } from 'sanity'
-import { HighlightIcon } from '@sanity/icons'
-import { VideoIcon } from '@sanity/icons'
-import { diffBlock } from './diffBlock'
+import { HighlightIcon } from '@sanity/icons/Highlight'
 
 const HighlightDecorator = (props) => {
 	return React.createElement(

@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity'
-import { DesktopIcon } from '@sanity/icons'
+import { DesktopIcon } from '@sanity/icons/Desktop'
 
 export const containerBlock = defineType({
 

@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity'
-import { InlineIcon } from '@sanity/icons'
+import { InlineIcon } from '@sanity/icons/Inline'
 
 export const diffBlock = defineType({
 
