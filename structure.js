@@ -1,4 +1,3 @@
-
 import { EarthGlobeIcon } from '@sanity/icons/EarthGlobe'
 import { supportedLanguages } from './supportedLanguages'
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list'
@@ -12,8 +11,8 @@ function languageSection(S, context, language) {
 				.title(language.title)
 				.items([
 					orderableDocumentListDeskItem({
-						type: 'article',
-						title: 'Articles',
+						type: 'case',
+						title: 'Cases',
 						filter: 'language == $language',
 						params: {
 							language: language.id,

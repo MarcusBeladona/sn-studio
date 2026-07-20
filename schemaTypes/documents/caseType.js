@@ -3,9 +3,9 @@ import { DocumentTextIcon } from '@sanity/icons/DocumentText'
 
 import { orderRankField, orderRankOrdering } from '@sanity/orderable-document-list'
 
-export const articleType = defineType({
+export const caseType = defineType({
 
-	name: 'article',
+	name: 'case',
 	type: 'document',
 	icon: DocumentTextIcon,
 
