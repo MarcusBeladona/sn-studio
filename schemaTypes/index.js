@@ -7,8 +7,8 @@ import { gridBlock } from './blocks/gridBlock'
 import { iframeBlock } from './blocks/iframeBlock'
 import { richTextBlock } from './blocks/richTextBlock'
 import { videoBlock } from './blocks/videoBlock'
+
 import { articleType } from './documents/articleType'
-import { caseType } from './documents/caseType'
 
 export const schemaTypes = [
 	cardBlock,
@@ -17,9 +17,9 @@ export const schemaTypes = [
 	richTextBlock,
 	videoBlock,
 	iframeBlock,
-	caseType,
-	articleType,
 	carouselBlock,
 	containerBlock,
-	diffBlock
+	diffBlock,
+
+	articleType,
 ]

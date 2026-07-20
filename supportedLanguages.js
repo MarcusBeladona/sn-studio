@@ -10,4 +10,4 @@ export const supportedLanguages = [
 	{ id: 'en', title: 'English' },
 ]
 
-export const translatedSchemaTypes = ['case', 'article']
+export const translatedSchemaTypes = ['article']

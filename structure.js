@@ -12,17 +12,6 @@ function languageSection(S, context, language) {
 				.title(language.title)
 				.items([
 					orderableDocumentListDeskItem({
-						type: 'case',
-						title: 'Cases',
-						filter: 'language == $language',
-						params: {
-							language: language.id,
-						},
-						S,
-						context,
-					}),
-
-					orderableDocumentListDeskItem({
 						type: 'article',
 						title: 'Articles',
 						filter: 'language == $language',
