@@ -30,6 +30,12 @@ export const carouselBlock = defineType({
 			fieldset: 'flags',
 		}),
 		defineField({
+			name: 'auto',
+			type: 'boolean',
+			initialValue: false,
+			fieldset: 'flags',
+		}),
+		defineField({
 			name: 'border',
 			type: 'boolean',
 			initialValue: false,

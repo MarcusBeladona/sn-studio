@@ -19,7 +19,7 @@ export const containerBlock = defineType({
 
 		// FLAGS
 
-		defineField({
+		/* defineField({
 			name: 'style',
 			type: 'string',
 			options: {
@@ -29,7 +29,7 @@ export const containerBlock = defineType({
 				],
 				layout: 'radio'
 			}
-		}),
+		}), */
 		defineField({
 			name: 'fullWidth',
 			type: 'boolean',

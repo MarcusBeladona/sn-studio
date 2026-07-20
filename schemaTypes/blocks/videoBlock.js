@@ -22,7 +22,8 @@ export const videoBlock = defineType({
 			type: 'string',
 		}),
 
-		// Flags
+		// FLAGS
+
 		defineField({
 			name: 'fullWidth',
 			type: 'boolean',
