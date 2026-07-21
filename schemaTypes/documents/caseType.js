@@ -96,7 +96,13 @@ export const caseType = defineType({
 			group: 'options',
 			fieldset: 'flags',
 		}),
-
+		defineField({
+			name: 'border',
+			type: 'boolean',
+			initialValue: false,
+			group: 'options',
+			fieldset: 'flags',
+		}),
 	],
 	preview: {
 		select: {
